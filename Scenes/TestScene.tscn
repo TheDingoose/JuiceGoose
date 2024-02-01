@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddqwhv54u6hnu"]
+
+[ext_resource type="Script" path="res://Scenes/SimplePlayerMovement.gd" id="1_cq5x0"]
+[ext_resource type="Script" path="res://PlayerCamera.gd" id="1_fui43"]
+[ext_resource type="Script" path="res://Scenes/PlayerFollowSpot.gd" id="2_u4vrk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1ih7p"]
+frequency = 0.6756
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_wrc1u"]
+noise = SubResource("FastNoiseLite_1ih7p")
+
+[sub_resource type="FogMaterial" id="FogMaterial_dt0m1"]
+density = 0.6616
+density_texture = SubResource("NoiseTexture3D_wrc1u")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_s4u72"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7hyoy"]
+
+[sub_resource type="Environment" id="Environment_lnemv"]
+background_mode = 1
+volumetric_fog_enabled = true
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.999868, 0.0121235, 0.0108054, -0.0122873, 0.999809, 0.0152226, -0.0106188, -0.0153534, 0.999826, 0.0110106, 4.76837e-07, -0.0158119)
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(10, 7.45058e-09, 3.25963e-09, 1.62981e-09, -4.32134e-07, 10, 2.98023e-08, -10, -4.91738e-07, 0.000169536, -0.0215264, 0.0250567)
+size = Vector3(10, 10, 4)
+material = SubResource("FogMaterial_dt0m1")
+
+[node name="Player" type="Node3D" parent="."]
+transform = Transform3D(1, 3.7835e-10, -7.45058e-09, -1.74623e-10, 1, -5.58794e-09, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_cq5x0")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, -1.46247e-08, 2.42144e-08, -2.32831e-10, 1, -7.45058e-09, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_fui43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_s4u72")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 1.91852e-07, -2.38419e-07, -1.30385e-07, 100, 0, 1.19209e-07, -2.38419e-07, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7hyoy")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, -1.76951e-08, -1.39407e-08, -1.74623e-10, -4.37722e-08, 1, 0, -1, -5.58794e-08, 0.142876, 36.4722, -0.177008)
+light_color = Color(0.956863, 0.956863, 0.933333, 1)
+light_energy = 8.26
+light_volumetric_fog_energy = 7.596
+spot_range = 324.705
+spot_angle = 1.76
+spot_angle_attenuation = 0.258818
+script = ExtResource("2_u4vrk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lnemv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, -1.45228e-08, 1.76951e-08, -1.74623e-10, 1, -1.21072e-08, 0, 0, 1, -4.72481, 0.98566, -0.0265844)
+visible = false
+light_color = Color(0.8, 0.286275, 0.482353, 1)
+omni_range = 31.5876
