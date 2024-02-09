@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://ddqwhv54u6hnu"]
 
-[ext_resource type="Script" path="res://Scenes/SimplePlayerMovement.gd" id="1_cq5x0"]
+[ext_resource type="Script" path="res://Scripts/SimplePlayerMovement.gd" id="1_cq5x0"]
 [ext_resource type="Script" path="res://PlayerCamera.gd" id="1_fui43"]
-[ext_resource type="Script" path="res://Scenes/PlayerFollowSpot.gd" id="2_u4vrk"]
+[ext_resource type="Script" path="res://Scripts/PlayerFollowSpot.gd" id="2_u4vrk"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1ih7p"]
 frequency = 0.6756
@@ -47,7 +47,7 @@ transform = Transform3D(100, 1.91852e-07, -2.38419e-07, -1.30385e-07, 100, 0, 1.
 mesh = SubResource("PlaneMesh_7hyoy")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, -1.76951e-08, -1.39407e-08, -1.74623e-10, -4.37722e-08, 1, 0, -1, -5.58794e-08, 0.142876, 36.4722, -0.177008)
+transform = Transform3D(-0.778111, -0.628115, 0.00391639, 8.49897e-07, 0.00623397, 0.999981, -0.628128, 0.778096, -0.00485018, 0.14291, 36.4722, -0.176982)
 light_color = Color(0.956863, 0.956863, 0.933333, 1)
 light_energy = 8.26
 light_volumetric_fog_energy = 7.596
