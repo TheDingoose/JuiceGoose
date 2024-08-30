@@ -21,6 +21,7 @@ func fail():
 	current_failures += 1
 	if current_failures >= max_failures:
 		print("YOU LOSE (YOUR JOB)")
+		max_active_tasks = 0
 		SceneManager.load_failstate()
 		#play some sort of animation, then make scenemanager reset everything
 	pass
