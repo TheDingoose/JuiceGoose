@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://boqw803r43e4y"]
+[gd_scene load_steps=2 format=3 uid="uid://boqw803r43e4y"]
+
+[ext_resource type="PackedScene" uid="uid://ccol101qtvyi" path="res://Tasks/Keyboard/keyboard_task.tscn" id="1_jxcxj"]
 
 [node name="Main" type="Node2D"]
 
@@ -8,3 +10,6 @@ offset_top = 181.0
 offset_right = 334.0
 offset_bottom = 204.0
 text = "HELLO THERE"
+
+[node name="KeyboardTask" parent="." instance=ExtResource("1_jxcxj")]
+position = Vector2(569, 308)
