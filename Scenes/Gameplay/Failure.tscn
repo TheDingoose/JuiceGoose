@@ -5,39 +5,41 @@
 [node name="Failure" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1154.0
-offset_bottom = 650.0
+offset_right = 1928.0
+offset_bottom = 1088.0
 color = Color(0.0980392, 0.0980392, 0.0980392, 0.615686)
 
 [node name="Meerkat" type="Sprite2D" parent="."]
-position = Vector2(546, 525)
+position = Vector2(970, 890)
 rotation = -1.58458
-scale = Vector2(0.183965, 0.183965)
+scale = Vector2(0.309014, 0.309014)
 texture = ExtResource("1_maieu")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 1149.0
-offset_bottom = 168.0
+offset_left = 365.0
+offset_top = 25.0
+offset_right = 1514.0
+offset_bottom = 193.0
 theme_override_colors/font_color = Color(0.957987, 6.08854e-06, 9.62615e-07, 1)
 theme_override_font_sizes/font_size = 80
 text = "YOU LOSE (YOUR JOB)"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 444.0
-offset_top = 340.0
-offset_right = 587.0
-offset_bottom = 409.0
+offset_left = 842.0
+offset_top = 673.0
+offset_right = 985.0
+offset_bottom = 742.0
 theme_override_colors/font_color = Color(0.726732, 0.726732, 0.726732, 1)
 theme_override_font_sizes/font_size = 50
 text = "IDIOT"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 435.0
-offset_top = 480.0
-offset_right = 578.0
-offset_bottom = 549.0
+offset_left = 833.0
+offset_top = 813.0
+offset_right = 976.0
+offset_bottom = 882.0
 rotation = -1.19002
 theme_override_colors/font_color = Color(0.726732, 0.726732, 0.726732, 1)
 theme_override_font_sizes/font_size = 50

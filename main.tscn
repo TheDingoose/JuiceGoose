@@ -6,9 +6,9 @@
 [node name="Main" type="Node2D"]
 
 [node name="Meerkat" type="Sprite2D" parent="."]
-position = Vector2(578, 464)
-scale = Vector2(0.201425, 0.201425)
+position = Vector2(928, 821)
+scale = Vector2(0.261334, 0.261334)
 texture = ExtResource("2_wnrhp")
 
 [node name="KeyboardTask" parent="." instance=ExtResource("1_jxcxj")]
-position = Vector2(551, 143)
+position = Vector2(896, 455)

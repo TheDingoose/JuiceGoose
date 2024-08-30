@@ -19,3 +19,8 @@ config/icon="res://icon.svg"
 
 GameManager="*res://General/game_manager.gd"
 SceneManager="*res://General/scene_manager.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
