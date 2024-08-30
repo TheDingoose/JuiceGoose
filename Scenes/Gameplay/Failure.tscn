@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://wdl8xixvdbi4"]
+
+[ext_resource type="Texture2D" uid="uid://qcqy4fynyrou" path="res://RandomArts/Meerkat.png" id="1_maieu"]
+
+[node name="Failure" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 650.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.615686)
+
+[node name="Meerkat" type="Sprite2D" parent="."]
+position = Vector2(546, 525)
+rotation = -1.58458
+scale = Vector2(0.183965, 0.183965)
+texture = ExtResource("1_maieu")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1149.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0.957987, 6.08854e-06, 9.62615e-07, 1)
+theme_override_font_sizes/font_size = 80
+text = "YOU LOSE (YOUR JOB)"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 444.0
+offset_top = 340.0
+offset_right = 587.0
+offset_bottom = 409.0
+theme_override_colors/font_color = Color(0.726732, 0.726732, 0.726732, 1)
+theme_override_font_sizes/font_size = 50
+text = "IDIOT"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 435.0
+offset_top = 480.0
+offset_right = 578.0
+offset_bottom = 549.0
+rotation = -1.19002
+theme_override_colors/font_color = Color(0.726732, 0.726732, 0.726732, 1)
+theme_override_font_sizes/font_size = 50
+text = "<"
+horizontal_alignment = 1

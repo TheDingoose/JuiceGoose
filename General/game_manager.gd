@@ -1,8 +1,12 @@
 extends Node
 
-#manage what scene we are in, and fail conditions in main game
+#manage fail conditions in main game
+#also manage communication between character and tasks??
 @export var max_active_tasks = 10
 @export var current_active_tasks = 0
+
+@export var max_failures = 3
+var current_failures = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +18,11 @@ func _process(delta: float) -> void:
 
 func fail():
 	print("FAILURE")
+	current_failures += 1
+	if current_failures >= max_failures:
+		print("YOU LOSE (YOUR JOB)")
+		SceneManager.load_failstate()
+		#play some sort of animation, then make scenemanager reset everything
 	pass
 
 func add_task():

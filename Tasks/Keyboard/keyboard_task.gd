@@ -4,8 +4,9 @@ var cooldown = 0
 @export var min_cooldown: float = 1
 @export var max_cooldown: float = 3
 
-@export var uptime: float = 0
+var uptime: float = 0
 @export var max_uptime: float = 2
+
 var active: bool = false
 var active_key
 
@@ -52,21 +53,13 @@ func _process(delta: float) -> void:
 		uptime += delta
 		if uptime > max_uptime:
 			GameManager.fail()
-			active = false
-			$PopupBox.visible = false
-			$Label.visible = false
-			cooldown = get_cooldown_length()
+			end_task()
 	else:
 		cooldown -= delta
 		if cooldown < 0:
 			if GameManager.can_add_task():
-				active = true
-				uptime = 0
 				active_key = key_dict.keys()[randi_range(0, key_dict.size() - 1)]
-				$Label.text = active_key
-				$PopupBox.visible = true
-				$Label.visible = true
-				GameManager.add_task()
+				start_task()
 			cooldown = get_cooldown_length()
 	pass
 	
@@ -74,9 +67,23 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if active && event is InputEventKey:
 		if event.pressed && event.keycode == key_dict[active_key]:
-			active = false
-			$PopupBox.visible = false
-			$Label.visible = false
-			cooldown = get_cooldown_length()
-			GameManager.remove_task()
+			end_task()
 			pass
+
+func start_task():
+	active = true
+	uptime = 0
+	$Label.text = active_key
+	$PopupBox.visible = true
+	$Label.visible = true
+	GameManager.add_task()
+	pass
+	
+
+func end_task():
+	active = false
+	$PopupBox.visible = false
+	$Label.visible = false
+	cooldown = get_cooldown_length()
+	GameManager.remove_task()
+	pass
