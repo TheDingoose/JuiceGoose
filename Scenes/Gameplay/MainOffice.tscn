@@ -16,31 +16,37 @@ text = "OFFICE
 metadata/_edit_use_anchors_ = true
 
 [node name="Node2D" type="Node2D" parent="."]
+z_index = -1
 position = Vector2(-71, 134)
 scale = Vector2(1.06138, 1.06138)
 
 [node name="CubiclePlaceholde" type="Sprite2D" parent="Node2D"]
+z_index = -1
 position = Vector2(2238.6, 1173.95)
 scale = Vector2(0.872158, 0.743369)
 texture = ExtResource("1_2bajo")
 offset = Vector2(-1416, -1090)
 
 [node name="TablePlaceholder" type="Sprite2D" parent="Node2D"]
+z_index = -1
 position = Vector2(2400, 1344)
 texture = ExtResource("2_jfeng")
 offset = Vector2(-1415, -1092)
 
 [node name="ComputerPlaceholder" type="Sprite2D" parent="Node2D"]
+z_index = -1
 position = Vector2(2400, 1344)
 texture = ExtResource("3_1cwn0")
 offset = Vector2(-1371, -1102)
 
 [node name="KeyboardPlaceholder" type="Sprite2D" parent="Node2D"]
+z_index = -1
 position = Vector2(2400, 1344)
 texture = ExtResource("4_edhp2")
 offset = Vector2(-1377, -1097)
 
 [node name="MousePlaceholder" type="Sprite2D" parent="Node2D"]
+z_index = -1
 position = Vector2(2400, 1344)
 texture = ExtResource("5_0p643")
 offset = Vector2(-1359, -1093)
