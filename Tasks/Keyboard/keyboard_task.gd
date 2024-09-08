@@ -78,7 +78,6 @@ func start_task():
 	$Label.visible = true
 	GameManager.add_task()
 	pass
-	
 
 func end_task():
 	active = false

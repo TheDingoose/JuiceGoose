@@ -1,6 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2nw7ddxilb1c"]
+[gd_scene load_steps=6 format=3 uid="uid://c2nw7ddxilb1c"]
 
 [ext_resource type="Script" path="res://Tasks/Ads/ad_task.gd" id="1_6r0wk"]
+[ext_resource type="Texture2D" uid="uid://cbn1ie78wodm3" path="res://Tasks/Ads/adbox-placeholder.png" id="2_11stj"]
+[ext_resource type="Texture2D" uid="uid://c7p6yel5bl7cf" path="res://Tasks/Ads/bye-ad-placeholder.png" id="3_1e35c"]
+[ext_resource type="Texture2D" uid="uid://c6h3ei32fssg0" path="res://Tasks/Ads/alpha-ad-placeholder.png" id="4_d8ou2"]
+[ext_resource type="Texture2D" uid="uid://d01hh7vmgxgqt" path="res://Tasks/Ads/grub-ad-placeholder.png" id="5_ns324"]
 
 [node name="AdTask" type="Node2D"]
 script = ExtResource("1_6r0wk")
+
+[node name="Adbox-placeholder" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(930, 492)
+texture = ExtResource("2_11stj")
+
+[node name="Bye-ad-placeholder" type="Sprite2D" parent="Adbox-placeholder"]
+position = Vector2(-1, 0)
+texture = ExtResource("3_1e35c")
+
+[node name="Button" type="Button" parent="Adbox-placeholder/Bye-ad-placeholder"]
+offset_left = 200.0
+offset_top = -156.0
+offset_right = 221.0
+offset_bottom = -136.0
+
+[node name="Alpha-ad-placeholder" type="Sprite2D" parent="Adbox-placeholder"]
+texture = ExtResource("4_d8ou2")
+
+[node name="Grub-ad-placeholder" type="Sprite2D" parent="Adbox-placeholder"]
+texture = ExtResource("5_ns324")
+
+[connection signal="pressed" from="Adbox-placeholder/Bye-ad-placeholder/Button" to="." method="_on_button_pressed"]
